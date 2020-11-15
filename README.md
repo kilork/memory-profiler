@@ -18,6 +18,19 @@ memory-profiler YOUR_EXECUTABLE [ARGS]
 
 Now you can copy produced `*.dat` files for future analysis with `memory-profiler-cli`.
 
+Example for `ripgrep`:
+
+```bash
+$ docker run -v "$(pwd)":/data -it --rm kil0rk/memory-profiler
+# cargo install ripgrep
+# cd /data
+# memory-profile rg set /etc
+# exit
+$ docker run -p 8080:8080 -v "$(pwd)":/data -it --rm kil0rk/memory-profiler-cli
+```
+
+Now you can visit `http://localhost:8080` and check memory allocation and leak report.
+
 ## Changelog
 
 ### v1.0.0
